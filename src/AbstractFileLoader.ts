@@ -5,7 +5,7 @@ import SpruceError from './errors/SpruceError'
 export default abstract class AbstractFileLoader<FileContent>
     implements FileLoader<FileContent>
 {
-    public static Class?: FileLoaderConstructor<any>
+    public static Class?: FileLoaderConstructor
     protected abstract fileExtension: string
     protected path!: string
     protected shouldValidatePath: boolean
@@ -16,8 +16,8 @@ export default abstract class AbstractFileLoader<FileContent>
     }
 
     // Static Create method preserved for subclass creation
-    public static Create<LoaderClass extends AbstractFileLoader<any>>(
-        this: FileLoaderConstructor<LoaderClass>,
+    public static Create(
+        this: FileLoaderConstructor,
         options?: FileLoaderOptions
     ) {
         return new (AbstractFileLoader.Class ?? this)(options)
@@ -85,6 +85,6 @@ export interface FileLoaderOptions {
     shouldValidatePath?: boolean
 }
 
-export type FileLoaderConstructor<LoaderClass> = new (
+export type FileLoaderConstructor = new (
     options?: FileLoaderOptions
-) => LoaderClass
+) => AbstractFileLoader<any>

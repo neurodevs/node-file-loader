@@ -2,7 +2,6 @@ import AbstractFileLoader, { FileLoaderOptions } from '../AbstractFileLoader'
 
 export default class MockFileLoader extends AbstractFileLoader<string[]> {
     public numCallsToValidatePath = 0
-    public passedOptions?: FileLoaderOptions
 
     protected fileExtension = '.mock'
     private shouldThrowOnLoadFile = false
@@ -11,7 +10,6 @@ export default class MockFileLoader extends AbstractFileLoader<string[]> {
 
     public constructor(options?: FileLoaderOptions) {
         super(options)
-        this.passedOptions = options
     }
 
     public setMockContent(content: string[]) {
