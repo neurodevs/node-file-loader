@@ -87,4 +87,4 @@ export interface FileLoaderOptions {
 
 export type FileLoaderConstructor = new (
     options?: FileLoaderOptions
-) => AbstractFileLoader<any>
+) => FileLoader<any>
