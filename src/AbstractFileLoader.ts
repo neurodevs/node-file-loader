@@ -5,7 +5,6 @@ import SpruceError from './errors/SpruceError'
 export default abstract class AbstractFileLoader<FileContent>
     implements FileLoader<FileContent>
 {
-    public static Class?: FileLoaderConstructor
     protected abstract fileExtension: string
     protected path!: string
     protected shouldValidatePath: boolean
