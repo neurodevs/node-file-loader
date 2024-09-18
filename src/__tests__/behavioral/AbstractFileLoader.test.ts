@@ -5,7 +5,7 @@ import AbstractSpruceTest, {
     generateId,
 } from '@sprucelabs/test-utils'
 import { FileLoaderOptions } from '../../AbstractFileLoader'
-import { MockFileLoader } from '../../testDoubles/MockFileLoader'
+import MockFileLoader from '../../testDoubles/MockFileLoader'
 
 export default class AbstractFileLoaderTest extends AbstractSpruceTest {
     private static invalidExtensionPath: string
