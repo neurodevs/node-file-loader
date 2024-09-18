@@ -15,14 +15,6 @@ export default abstract class AbstractFileLoader<FileContent>
         this.shouldValidatePath = shouldValidatePath
     }
 
-    // Static Create method preserved for subclass creation
-    public static Create(
-        this: FileLoaderConstructor,
-        options?: FileLoaderOptions
-    ) {
-        return new (AbstractFileLoader.Class ?? this)(options)
-    }
-
     public async load(path: string) {
         this.path = path
 

@@ -96,6 +96,6 @@ export default class AbstractFileLoaderTest extends AbstractSpruceTest {
     }
 
     private static Loader(options?: FileLoaderOptions) {
-        return MockFileLoader.Create(options) as MockFileLoader
+        return new MockFileLoader(options) as MockFileLoader
     }
 }
