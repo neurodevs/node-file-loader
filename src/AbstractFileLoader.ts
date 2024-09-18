@@ -5,6 +5,7 @@ import SpruceError from './errors/SpruceError'
 export default abstract class AbstractFileLoader<FileContent>
     implements FileLoader<FileContent>
 {
+    public static Class?: FileLoaderConstructor<any>
     protected abstract fileExtension: string
     protected path!: string
     protected shouldValidatePath: boolean
@@ -19,7 +20,7 @@ export default abstract class AbstractFileLoader<FileContent>
         this: FileLoaderConstructor<LoaderClass>,
         options?: FileLoaderOptions
     ) {
-        return new this(options) as LoaderClass
+        return new (AbstractFileLoader.Class ?? this)(options)
     }
 
     public async load(path: string) {
