@@ -1,6 +1,6 @@
 import * as fs from 'fs'
 import { assertOptions } from '@sprucelabs/schema'
-import SpruceError from './errors/SpruceError'
+import SpruceError from '../errors/SpruceError'
 
 export default abstract class AbstractFileLoader<FileContent>
     implements FileLoader<FileContent>

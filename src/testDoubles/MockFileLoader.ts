@@ -1,4 +1,4 @@
-import AbstractFileLoader, { FileLoaderOptions } from '../AbstractFileLoader'
+import AbstractFileLoader, { FileLoaderOptions } from '../impl/AbstractFileLoader'
 
 export default class MockFileLoader extends AbstractFileLoader<string[]> {
     public numCallsToValidatePath = 0

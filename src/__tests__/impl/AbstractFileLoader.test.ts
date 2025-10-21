@@ -4,7 +4,7 @@ import AbstractSpruceTest, {
     errorAssert,
     generateId,
 } from '@sprucelabs/test-utils'
-import { FileLoaderOptions } from '../../AbstractFileLoader'
+import { FileLoaderOptions } from '../../impl/AbstractFileLoader'
 import MockFileLoader from '../../testDoubles/MockFileLoader'
 
 export default class AbstractFileLoaderTest extends AbstractSpruceTest {
