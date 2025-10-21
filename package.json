@@ -1,8 +1,23 @@
 {
   "name": "@neurodevs/node-file-loader",
   "version": "0.2.4",
+  "description": "Abstract file loader",
+  "keywords": [
+    "nodejs",
+    "typescript",
+    "tdd"
+  ],
+  "license": "MIT",
+  "author": "Eric Yates <hello@ericthecurious.com>",
+  "homepage": "https://github.com/neurodevs/node-file-loader",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neurodevs/node-file-loader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/neurodevs/node-file-loader/issues"
+  },
   "main": "build/index.js",
-  "repository": "https://github.com/neurodevs/node-file-loader.git",
   "scripts": {
     "build.ci": "yarn run build.tsc && yarn run build.resolve-paths && yarn run lint",
     "build.dev": "yarn run build.tsc --sourceMap ; yarn run resolve-paths.lint",
@@ -25,6 +40,12 @@
     "watch.rebuild": "yarn run clean.all && yarn install && yarn run watch.build.dev",
     "watch.tsc": "tsc -w"
   },
+  "dependencies": {
+    "@sprucelabs/error": "^6.0.541",
+    "@sprucelabs/schema": "^30.0.560",
+    "@sprucelabs/spruce-core-schemas": "^40.1.547",
+    "@sprucelabs/spruce-skill-utils": "^31.0.624"
+  },
   "devDependencies": {
     "@sprucelabs/jest-json-reporter": "^8.0.542",
     "@sprucelabs/resolve-path-aliases": "^2.0.516",
@@ -40,10 +61,6 @@
     "ts-node": "^10.9.2",
     "tsc-watch": "^6.2.1",
     "typescript": "^5.6.3"
-  },
-  "description": "Abstract file loader",
-  "skill": {
-    "namespace": "node-file-loader"
   },
   "jest": {
     "testRunner": "jest-circus/runner",
@@ -63,10 +80,7 @@
       "^#spruce/(.*)$": "<rootDir>/build/.spruce/$1"
     }
   },
-  "dependencies": {
-    "@sprucelabs/error": "^6.0.541",
-    "@sprucelabs/schema": "^30.0.560",
-    "@sprucelabs/spruce-core-schemas": "^40.1.547",
-    "@sprucelabs/spruce-skill-utils": "^31.0.624"
+  "skill": {
+    "namespace": "node-file-loader"
   }
 }
